@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/gpt-scholar/static/js/main.b5670a77.js",
+    "index.html": "/gpt-scholar/index.html",
+    "main.b5670a77.js.map": "/gpt-scholar/static/js/main.b5670a77.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.b5670a77.js"
+  ]
+}
