@@ -18,7 +18,11 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
-const Links = ["Dashboard", "Interact", "Settings"];
+const Links = {
+  Dashboard: "/",
+  Interact: "/interact",
+  Settings: "/Settings",
+};
 
 const NavLink = ({ children }) => (
   <Link
@@ -56,8 +60,8 @@ export default function Navbar() {
               spacing={4}
               display={{ base: "none", md: "flex" }}
             >
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+              {Object.entries(Links).map(([k, v]) => (
+                <Link href={v}>{k}</Link>
               ))}
             </HStack>
           </HStack>
@@ -90,8 +94,10 @@ export default function Navbar() {
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+              {Object.entries(Links).map(([k, v]) => (
+                <Link key={k} href={v}>
+                  {k}
+                </Link>
               ))}
             </Stack>
           </Box>
