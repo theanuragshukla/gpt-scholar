@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/gpt-scholar/static/css/main.4dbc2c0a.css",
+    "main.js": "/gpt-scholar/static/js/main.c2c4a135.js",
+    "index.html": "/gpt-scholar/index.html",
+    "main.4dbc2c0a.css.map": "/gpt-scholar/static/css/main.4dbc2c0a.css.map",
+    "main.c2c4a135.js.map": "/gpt-scholar/static/js/main.c2c4a135.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4dbc2c0a.css",
+    "static/js/main.c2c4a135.js"
+  ]
+}
