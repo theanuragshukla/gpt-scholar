@@ -1,108 +1,59 @@
-import { ReactNode } from "react";
-import {
-  Box,
-  Flex,
-  Avatar,
-  HStack,
-  Link,
-  IconButton,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
-  useDisclosure,
-  useColorModeValue,
-  Stack,
-} from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { Avatar, Flex, Grid, Heading, Show } from "@chakra-ui/react";
+import { Menu } from "iconsax-react";
+import { Link } from "react-router-dom";
 
-const Links = {
-  Dashboard: "/",
-  Interact: "/interact",
-  Settings: "/Settings",
-};
+import "../../styles/navbar.scss";
 
-const NavLink = ({ children }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={"md"}
-    _hover={{
-      textDecoration: "none",
-      bg: useColorModeValue("gray.200", "gray.700"),
-    }}
-    href={"#"}
-  >
-    {children}
-  </Link>
-);
+function Logo() {
+  return (
+    <Grid>
+      <Heading fontSize={18}>Scholar@GPT</Heading>
+    </Grid>
+  );
+}
+
+function Links() {
+  return (
+    <Flex gap={16} fontSize={16} fontWeight={500} color="nord13">
+      <Link>Dashboard</Link>
+      <Link>Learn</Link>
+      <Link>Interact</Link>
+    </Flex>
+  );
+}
+function Profile() {
+  return (
+    <Flex
+      justify="center"
+      alignItems="center"
+      gap="4"
+      borderRadius="200vmax"
+      bg="whiteAlpha.200"
+      px={2}
+      py={1}
+    >
+      <Avatar size="xs" />
+      <Menu size={18} />
+    </Flex>
+  );
+}
 
 export default function Navbar() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
   return (
-    <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <IconButton
-            size={"md"}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={"Open Menu"}
-            display={{ md: "none" }}
-            onClick={isOpen ? onClose : onOpen}
-          />
-          <HStack spacing={8} alignItems={"center"}>
-            <Box fontWeight={800}>SCHOLAR@GPT</Box>
-            <HStack
-              as={"nav"}
-              spacing={4}
-              display={{ base: "none", md: "flex" }}
-            >
-              {Object.entries(Links).map(([k, v]) => (
-                <Link href={v}>{k}</Link>
-              ))}
-            </HStack>
-          </HStack>
-          <Flex alignItems={"center"}>
-            <Menu>
-              <MenuButton
-                as={Button}
-                rounded={"full"}
-                variant={"link"}
-                cursor={"pointer"}
-                minW={0}
-              >
-                <Avatar
-                  size={"sm"}
-                  src={
-                    "https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9"
-                  }
-                />
-              </MenuButton>
-              <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
-                <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
-              </MenuList>
-            </Menu>
-          </Flex>
-        </Flex>
-
-        {isOpen ? (
-          <Box pb={4} display={{ md: "none" }}>
-            <Stack as={"nav"} spacing={4}>
-              {Object.entries(Links).map(([k, v]) => (
-                <Link key={k} href={v}>
-                  {k}
-                </Link>
-              ))}
-            </Stack>
-          </Box>
-        ) : null}
-      </Box>
-    </>
+    <Flex
+      color="nord8"
+      h="60px"
+      justify="space-between"
+      alignItems="center"
+      px={16}
+      className="navbar"
+      flexWrap="wrap"
+    >
+      <Logo />
+      <Show above="md">
+        <Links />
+      </Show>
+      <Profile />
+    </Flex>
   );
 }

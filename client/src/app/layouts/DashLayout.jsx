@@ -5,11 +5,11 @@ import Navbar from "../common/Navbar";
 
 function DashLayout() {
   return (
-    <Grid templateRows="60px 1fr">
+    <Grid templateRows={{ base: "60px calc(100vh - 60px)" }}>
       <GridItem>
         <Navbar />
       </GridItem>
-      <GridItem>
+      <GridItem py={8} overflow="auto">
         <Outlet />
       </GridItem>
     </Grid>

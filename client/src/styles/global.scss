@@ -1,5 +1,28 @@
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+@import "../../node_modules/nord/src/sass/nord.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
+}
+
+body {
+  background: $nord0;
+}
+
+span.badge {
+  background-color: $nord2;
+  color: $nord7;
+  border-radius: 200vmax;
+  cursor: pointer;
+  &:hover,
+  &.selected {
+    background-color: $nord5;
+    color: $nord0;
+  }
 }
