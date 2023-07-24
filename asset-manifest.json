@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.js": "/gpt-scholar/static/js/main.cea442bf.js",
+    "main.css": "/gpt-scholar/static/css/main.b1b163e1.css",
+    "main.js": "/gpt-scholar/static/js/main.041f9b7e.js",
     "index.html": "/gpt-scholar/index.html",
-    "main.cea442bf.js.map": "/gpt-scholar/static/js/main.cea442bf.js.map"
+    "main.b1b163e1.css.map": "/gpt-scholar/static/css/main.b1b163e1.css.map",
+    "main.041f9b7e.js.map": "/gpt-scholar/static/js/main.041f9b7e.js.map"
   },
   "entrypoints": [
-    "static/js/main.cea442bf.js"
+    "static/css/main.b1b163e1.css",
+    "static/js/main.041f9b7e.js"
   ]
 }
