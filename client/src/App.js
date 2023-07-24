@@ -7,6 +7,10 @@ import "./styles/global.scss";
 
 function App() {
   const theme = extendTheme({
+    fonts: {
+      html: "Ubuntu, sans-serif",
+      heading: "Ubuntu, sans-serif",
+    },
     styles: {
       global: () => ({
         body: {
